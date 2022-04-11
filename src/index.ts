@@ -1,7 +1,13 @@
 import express, { Request, Response } from 'express'
 import mongoose from 'mongoose'
+require('./models/User')
+
+const authRoutes = require('./routes/authRoutes')
 
 const app = express()
+
+app.use(express.json())
+app.use(authRoutes)
 
 const mongoUri =
   'mongodb+srv://john:1234@nodeexpressproject.zkoxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
@@ -15,7 +21,7 @@ mongoose.connection.on('error', (err) => {
 })
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hi there!')
+  res.send('Interstellar')
 })
 
 app.listen(3000, () => {
