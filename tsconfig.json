@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./node_module/@types", "./src/typings/express"],
     "useUnknownInCatchVariables": false,
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 

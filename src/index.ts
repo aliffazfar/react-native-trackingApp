@@ -1,9 +1,9 @@
+require('./models/User')
 import express, { Request, Response } from 'express'
 import mongoose from 'mongoose'
-require('./models/User')
 
 const authRoutes = require('./routes/authRoutes')
-
+const requireAuth = require('./middleware/requireAuth')
 const app = express()
 
 app.use(express.json())
@@ -20,8 +20,8 @@ mongoose.connection.on('error', (err) => {
   console.log('Error connecting to mongo', err)
 })
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Interstellar')
+app.get('/', requireAuth, (req: Request, res: Response) => {
+  res.send(`Your email: ${req.user.email}`)
 })
 
 app.listen(3000, () => {
