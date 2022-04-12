@@ -1,13 +1,16 @@
 require('./models/User')
+require('./models/Track')
 import express, { Request, Response } from 'express'
 import mongoose from 'mongoose'
 
 const authRoutes = require('./routes/authRoutes')
+const trackRoutes = require('./routes/trackRoutes')
 const requireAuth = require('./middleware/requireAuth')
 const app = express()
 
 app.use(express.json())
 app.use(authRoutes)
+app.use(trackRoutes)
 
 const mongoUri =
   'mongodb+srv://john:1234@nodeexpressproject.zkoxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
