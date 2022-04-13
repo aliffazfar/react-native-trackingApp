@@ -15,6 +15,16 @@ const SignupScreen = ({ navigation }: NavProp) => {
   return (
     <View style={styles.container}>
       <NavigationEvents onWillFocus={clearErrorMessage} />
+      <AuthForm
+        headerText='Sign Up for Tracker'
+        errorMessage={state.errorMessage}
+        onSubmit={signup}
+        submitButtonText='Sign Up'
+      />
+      <NavLink
+        routeName='Signin'
+        text='Already have an account? Sign in instead!'
+      />
     </View>
   )
 }
