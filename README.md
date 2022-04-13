@@ -15,7 +15,8 @@
 
 **What I’ve Learned?**
 
-- [x] Setup with ExpressJS, NodeJS and ngrok for backend (RESTs API)
+- [x] Setup with ExpressJS, NodeJS and ngrok
+- [x] Using axios to connect with api
 - [x] Mongodb as database to store user details and tracks
 - [x] Generate token + salt and store into AsyncStorage in react native
-- [x] Using axios -> connecting with frontend
+- [x] Using useContext and useReducer to store and reach state data
