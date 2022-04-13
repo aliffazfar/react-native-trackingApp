@@ -1,11 +1,7 @@
 import React, { FC } from 'react'
 import { View, StyleSheet } from 'react-native'
 
-interface spaceProp {
-  children: any
-}
-
-const Spacer: FC<spaceProp> = ({ children }) => {
+const Spacer = ({ children }: any) => {
   return <View style={styles.spacer}>{children}</View>
 }
 
