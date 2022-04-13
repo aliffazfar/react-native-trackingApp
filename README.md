@@ -4,7 +4,7 @@
   <h1 align="center">Tracking Application</h1>
 
   <p align="center">
-    Track and save user locations application using React Native
+    Track and save user locations application using React Native in TypeScript
     <br />
     </p>
 </p>
