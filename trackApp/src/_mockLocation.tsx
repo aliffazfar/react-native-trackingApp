@@ -19,7 +19,7 @@ const getLocation = (increment: any) => {
 
 let counter = 0
 setInterval(() => {
-  Location.EventEmitter.emit('Expo.LocationChanged', {
+  Location.EventEmitter.emit('Expo.locationChanged', {
     watchId: Location._getCurrentWatchId(),
     location: getLocation(counter),
   })
