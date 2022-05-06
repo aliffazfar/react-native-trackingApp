@@ -1,11 +1,20 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
+import { Button } from 'react-native-elements'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import Spacer from '../components/Spacer'
+import { Context as AuthContext } from '../context/AuthContext'
 
 const AccountScreen: FC = () => {
+  const { signout } = useContext(AuthContext)
+
   return (
-    <View>
+    <SafeAreaView>
       <Text style={{ fontSize: 48 }}> Account Screen</Text>
-    </View>
+      <Spacer>
+        <Button title={'Sign Out'} onPress={signout} />
+      </Spacer>
+    </SafeAreaView>
   )
 }
 
