@@ -6,11 +6,12 @@ import Map from '../components/Map'
 import '../_mockLocation'
 import { Context as LocationContext } from '../context/LocationContext'
 import useLocation from '../hooks/useLocation'
+import { withNavigationFocus } from 'react-navigation'
 
-const TrackCreateScreen: FC = () => {
+const TrackCreateScreen: FC = ({ isFocused }: any) => {
   const { addLocation } = useContext(LocationContext)
 
-  const [err] = useLocation(addLocation)
+  const [err] = useLocation(isFocused, addLocation)
 
   return (
     <SafeAreaView>
@@ -21,6 +22,6 @@ const TrackCreateScreen: FC = () => {
   )
 }
 
-export default TrackCreateScreen
+export default withNavigationFocus(TrackCreateScreen)
 
 const styles = StyleSheet.create({})
