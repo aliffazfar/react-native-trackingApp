@@ -15,7 +15,7 @@ const TrackCreateScreen: FC = ({ isFocused }: any) => {
 
   return (
     <SafeAreaView>
-      <Text h2> Create a Track </Text>
+      <Text h2> Create a Track and testing</Text>
       <Map />
       {err ? <Text>Please enable location services</Text> : null}
     </SafeAreaView>
